@@ -1,0 +1,57 @@
+/*style moderne et adaptatif*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2E7D32;
+}
+
+header {
+    background-color: #orangered;
+    color: blue;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    background-color: #444;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: blanchedalmond;
+}
+
+section {
+    padding: 20px;
+    background-color: blanchedalmond;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: tomato;
+}
+
+.photo-profil {
+    width: 150px; /* Ajustez la taille */
+    height: 150px;
+    border-radius: 45%; /* Rend l’image ronde */
+    position: absolute; /* Position absolue */
+    top: 20px; /* Ajustement du placement */
+    right: 25px; /* Placée en haut à droite */
+    border: 8px solid #333; /* Bordure */
+}
